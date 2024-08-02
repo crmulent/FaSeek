@@ -1,0 +1,144 @@
+:root {
+    --dark1: #121212;
+    --accent1: #660167;
+    color: white;
+    background-color: var(--dark1);
+    font-size: 30px;
+    font-family: "JetBrains Mono", monospace
+}
+
+* {
+    font-family: "JetBrains Mono", monospace
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+.index_body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+#image-container {
+    display: flex;
+    flex-direction: column;
+    border: 2px dashed #ccc;
+    padding: 20px;
+    text-align: center;
+}
+
+#image-container img {
+    max-width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+}
+
+button {
+    margin: 20px;
+    padding: 10px 20px;
+    background-color: var(--accent1);
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 30px;
+    border-radius: 100px;
+}
+
+.result_title {
+    color: white;
+    text-align: center;
+    margin: 10px;
+}
+
+#image_searched {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.button_container {
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+div.previews {
+    width: 300px;
+    height: 300px;
+    overflow: hidden;
+    transition: 0.3s ease;
+    border: 3px solid white;
+    border-radius: 10px;
+}
+
+div.previews:hover {
+    transform: scale(1.1);
+}
+
+.previews>a>img {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.left-container {
+    width: 75%;
+    flex-grow: 1;
+    box-sizing: border-box;
+}
+
+.right-container {
+    top: 0;
+    position: sticky;
+    display: none;
+    width: 25%;
+    transition: width 300ms;
+    border: 1px solid transparent;
+    box-sizing: border-box;
+    height: 100vh;
+    overflow-y: scroll;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: auto;
+}
+
+th,
+td {
+    border: 1px solid var(--accent1);
+    padding: 8px;
+    text-align: left;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+th {
+    background-color: var(--accent1);
+    color: white;
+}
+
+a:visited {
+    color: white;
+}

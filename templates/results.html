@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/style.css">
+    <title>Search Results</title>
+</head>
+
+<body class="container">
+    <div class="left-container">
+        <div class="result_title">
+            <h1>
+                Search Result
+            </h1>
+        </div>
+        <div class="button_container">
+            <a href="/">
+                <button id="return">New Search</button>
+            </a>
+            <div>
+                <button onclick="sidebar()">
+                    Keywords
+                </button>
+            </div>
+            <a href="#" onclick="downloadAllImages()">
+                <button id="return">Download</button>
+            </a>
+        </div>
+        <div id="image_searched">
+            {% if results %}
+            {% for result in results %}
+            <div class="previews">
+                <a href={{ results[result] }}>
+                    <img src={{ result }} onerror="this.closest('div').style.display = 'none'" alt="">
+                </a>
+            </div>
+            {% endfor %}
+            {% else %}
+            <p>No images available.</p>
+            {% endif %}
+        </div>
+    </div>
+    <div id="right-container" class="right-container">
+        <div id="freqlist">
+            {% if freqlist %}
+            <div class="table-container">
+                <!-- Tiktok Links -->
+                <details>
+                    <summary>Tiktok Links</summary>
+                    {% if tikwm_freq %}
+                    <table>
+                        <tbody>
+                            <tr>
+                                <th>Freq</th>
+                                <th>Profile</th>
+                            </tr>
+                            {% for json in tikwm_freq %}
+                            {% if json %}
+                            <tr>
+                                <td>{{ tikwm_freq[json] }}</td>
+                                <td><a href="https://tiktok.com/@{{ json }}" target="_blank">{{ json }}</a></td>
+                            </tr>
+                            {% else %}
+                            {% endif %}
+                            {% endfor %}
+                        </tbody>
+                    {% endif %}
+                    </table>
+                </details>
+                <!-- Youtube Links -->
+                <details>
+                    <summary>Youtube Links</summary>
+                    <table>
+                        <tbody>
+                            {% for link in yt_links %}
+                            {% if link %}
+                            <tr>
+                                <td><a href="{{ link }}" target="_blank">{{ link }}</a></td>
+                            </tr>
+                            {% endif %}
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </details>
+                <!-- First Names -->
+                <details>
+                    <summary>First Names</summary>
+                    <table>
+                        <tbody>
+                            {% for names in firstname %}
+                            <tr>
+                                <td>{{ names }}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </details>
+                <!-- Last Names -->
+                <details>
+                    <summary>Last Names</summary>
+                    <table>
+                        <tbody>
+                            {% for names in lastname %}
+                            <tr>
+                                <td>{{ names }}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </details>
+                <!-- Frequency of Words -->
+                <details>
+                    <summary>Frequent Words</summary>
+                    <table>
+                        <tbody>
+                            {% for word in freqlist %}
+                            <tr>
+                                <td>{{ word }}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </details>
+            </div>
+            {% else %}
+            {% endif %}
+        </div>
+    </div>
+    <script src="static/script.js"></script>
+    <script>
+    </script>
+
+</body>
+
+</html>

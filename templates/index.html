@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="static/style.css">
+    <title>Clipboard Image Paste</title>
+</head>
+<body class="index_body">
+    <div id="image-container">
+        <input type="file" id="fileInput" accept="image/*" />
+        <div id="dropArea" style="border: 2px dashed #ccc; padding: 20px; text-align: center;">
+            Drop image here or paste it!
+        </div>
+
+        <!-- Display area for the uploaded or pasted image -->
+        <img id="imagePreview" style="display: none; margin-top: 20px; max-width: 100%;"/>
+
+        
+        <button onclick="processImage()">Process Image</button>
+    </div>
+
+    <script src="static/script.js"></script>
+</body>
+</html>
