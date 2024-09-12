@@ -28,8 +28,8 @@ Install the required Python packages by running:
 $ pip install -r requirements.txt
 ```
 
-### Adding API Key
-Make a **.env** file containing the following:
+### Adding ScrapingBee's API Key
+Make a **.env** file containing the [ScrapingBee's API](https://www.scrapingbee.com/):
 ```
 API_KEY=<API KEY>
 ```
